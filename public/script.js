@@ -1,3 +1,4 @@
+try {
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
@@ -53,4 +54,8 @@ function addVideoStream(video, stream) {
     video.play()
   })
   videoGrid.append(video)
+}
+} catch(e) {
+  console.dir(e, 'e')
+  document.body.innerText = e.message
 }
